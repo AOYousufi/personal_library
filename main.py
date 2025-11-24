@@ -29,7 +29,7 @@ while session_active and num_of_tries < 3:
         password = input("Password: ")
         avatar = input("Avatar: ")
 
-        get_result = profile.sign_up(username,{"details":{"name":name,"password":password,"avatar":avatar , "library" :{}}})
+        get_result = profile.sign_up(username, {"details":{"name":name, "password":password, "avatar":avatar , "library" :{}}})
         if get_result[0] !="error":
             print(f"Sign up Successful, {get_result[1]}")
             session_active = False
