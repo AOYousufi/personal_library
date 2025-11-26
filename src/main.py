@@ -1,5 +1,5 @@
 import users
-
+import requests
 
 print("Welcome")
 
@@ -42,4 +42,35 @@ while session_active and num_of_tries < 3:
 
 if user :
 
-    print(user)
+
+
+
+    query = None
+    api_key = "16c9b91c9a884004b2ff783454653974"
+
+    url = f"https://api.bigbookapi.com/search-books?query={query}&api-key={api_key}"
+
+
+    def request_url(url):
+        response = requests.get(url)
+        json_data = response.json()
+        return json_data
+
+
+
+
+    still_asking = True
+    while still_asking:
+
+
+
+        query = input("Enter your query: ")
+        books_data = request_url(url)
+
+        asking = input("Do you want logout (Y/N): ")
+        if asking == "n":
+            still_asking = False
+        else:
+            user = False
+
+
